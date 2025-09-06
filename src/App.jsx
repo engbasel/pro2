@@ -42,7 +42,6 @@ function App() {
     setData(newData);
   };
 
-// delete
 const deleteItemFromScreen = (item) => {
   const newData = data.filter((el) => el.name !== item.name);
   setData(newData);
