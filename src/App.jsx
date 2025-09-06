@@ -6,6 +6,10 @@ import CustomNavBar from "./components/nav_bar";
 import "./App.css";
 import { Route, Routes } from "react-router";
 import AboutMe from "../src/pages/aboutme_view";
+import AboutCompany from "./components/AboutCompany";
+import AboutPeople from "./components/AboutPeople";
+import Contact from "./components/Contact";
+import Newww from "./components/Newww";
 
 // testing data 
 const FakeData = [
@@ -56,12 +60,21 @@ function App() {
       <div className="actions">
         <button className="reset-btn" onClick={handleReset}>🔄 Reset</button>
       </div>
-<Routes>
-{/* <Route path="/cart" element={'cart_page'} /> */}
-<Route path="/about-me" element={<AboutMe />} />
 
-</Routes>
-    
+    <Routes>
+      {/* route عادي */}
+      <Route path="/about-me" element={<AboutMe />} />
+
+      {/* Nested Routes */}
+      <Route path="/about-me" element={<Newww/>}>
+        <Route path="company" element={<AboutCompany />} />
+        <Route path="people" element={<AboutPeople />} />
+      </Route>
+
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
+
+
       {/* <div className="food-list">
         {data.length === 0 ? (
           <p className="EmptyMessage">مفيش اكل جرب تاني  </p>
