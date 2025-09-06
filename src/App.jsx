@@ -1,14 +1,17 @@
+
+
 import React, { useState } from "react";
 import FoodCard from "./components/food_card";
 import CustomNavBar from "./components/nav_bar";
+import "./App.css";
 
 // testing data 
 const FakeData = [
-  { name: "بيتزا", price: 85, image: "pizza", amount: 0 },
-  { name: "برجر", price: 50, image: "burger", amount: 0 },
-  { name: "سلطة", price: 30, image: "salad", amount: 0 },
-  { name: "ساندويش", price: 25, image: "sandwich", amount: 0 },
-  { name: "عصير", price: 15, image: "juice", amount: 0 },
+  { name: "كشري", price: 30, image: "koshari", amount: 0 },
+  { name: "فول وطعمية", price: 20, image: "foul_taameya", amount: 0 },
+  { name: "ملوخية", price: 40, image: "molokhia", amount: 0 },
+  { name: "محشي", price: 50, image: "mahshi", amount: 0 },
+  { name: "كباب وكفتة", price: 120, image: "kebab_kofta", amount: 0 },
 ];
 
 function App() {
@@ -42,31 +45,35 @@ function App() {
     setData(newData);
   };
 
-const deleteItemFromScreen = (item) => {
-  const newData = data.filter((el) => el.name !== item.name);
-  setData(newData);
-};
+  // delete
+  const deleteItemFromScreen = (item) => {
+    const newData = data.filter((el) => el.name !== item.name);
+    setData(newData);
+  };
 
   return (
-    <div>
+    <div className="app-container">
       <CustomNavBar />
-      <button onClick={handleReset}> Reset </button>
-<div className="food-list">
-  {data.length === 0 ? (
-    <p>🚨 لا توجد عناصر، من فضلك ضيف بيانات.</p>
-  ) : (
-    data.map((item) => (
-      <FoodCard
-        key={item.name}
-        item={item}
-        onIncrement={() => handleIncrement(item)}
-        onDecrement={() => handleDecrement(item)}
-        onDelete={() => deleteItemFromScreen(item)}
-      />
-    ))
-  )}
-</div>
+      
+      <div className="actions">
+        <button className="reset-btn" onClick={handleReset}>🔄 Reset</button>
+      </div>
 
+      <div className="food-list">
+        {data.length === 0 ? (
+          <p className="EmptyMessage"> لا توجد </p>
+        ) : (
+          data.map((item) => (
+            <FoodCard
+              key={item.name}
+              item={item}
+              onIncrement={() => handleIncrement(item)}
+              onDecrement={() => handleDecrement(item)}
+              onDelete={() => deleteItemFromScreen(item)}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 }

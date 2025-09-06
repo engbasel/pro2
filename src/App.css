@@ -1,0 +1,128 @@
+.food-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-details {
+  margin-bottom: 12px;
+}
+
+.food-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.food-price {
+  color: #777;
+  margin: 4px 0 0;
+}
+
+.food-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.food-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.increment {
+  background: #4caf50;
+  color: white;
+}
+
+.increment:hover {
+  background: #45a049;
+}
+
+.decrement {
+  background: #f39c12;
+  color: white;
+}
+
+.decrement:hover {
+  background: #e67e22;
+}
+
+.delete {
+  background: #e74c3c;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.delete:hover {
+  background: #c0392b;
+}
+/* خلفية عامة */
+.app-container {
+  font-family: "Cairo", sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* زرار الريسيت */
+.actions {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.reset-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-btn:hover {
+  background: #0056b3;
+}
+
+/* جريد للكروت */
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.EmptyMessage {
+  text-align: center;
+  color: #555;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.app-container{  
+    padding: 20px;}
