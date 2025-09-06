@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FoodCard from "./components/FoodCard";
+import FoodCard from "./components/food_card";
+import CustomNavBar from "./components/nav_bar";
 
 // testing data 
 const FakeData = [
@@ -43,7 +44,8 @@ const handleDecrement = (item) => {
 
   return (
     <div>
-      <button onClick={handleReset}> Reset </button>
+<CustomNavBar/>
+            <button onClick={handleReset}> Reset </button>
       <div className="food-list">
         {data.map((item) => (
           <FoodCard
