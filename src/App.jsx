@@ -14,57 +14,60 @@ const FakeData = [
 function App() {
   const [data, setData] = useState(FakeData);
 
+  // reset
+  const handleReset = () => {
+    const newData = data.map((el) => ({ ...el, amount: 0 }));
+    setData(newData);
+  };
 
+  // increment
+  const handleIncrement = (item) => {
+    const newData = data.map((el) => {
+      if (el.name === item.name) {
+        return { ...el, amount: el.amount + 1 };
+      }
+      return el;
+    });
+    setData(newData);
+  };
 
-const handleReset = () => {
-  const newData = data.map((el) => ({ ...el, amount: 0 }));
-  setData(newData);
-};
+  // decrement
+  const handleDecrement = (item) => {
+    const newData = data.map((el) => 
+      el.name === item.name 
+        ? { ...el, amount: el.amount === 0 ? 0 : el.amount - 1 } 
+        : el
+    );
+    console.log(newData);
+    setData(newData);
+  };
 
-const handleIncrement = (item) => {
-  const newData = data.map((el) => {
-    if (el.name === item.name) {
-      return { ...el, amount: el.amount + 1 };
-    }
-    return el;
-  });
-  setData(newData);
-};
-
-const handleDecrement = (item) => {
-  const newData = data.map((el) => 
-    el.name === item.name 
-      ? { ...el, amount: el.amount === 0 ? 0 : el.amount - 1 } 
-      : el
-  );
-  console.log(newData);
-  setData(newData);
-  
-};
-
-
+// delete
 const deleteItemFromScreen = (item) => {
   const newData = data.filter((el) => el.name !== item.name);
   setData(newData);
-  
 };
-
 
   return (
     <div>
-<CustomNavBar/>
-            <button onClick={handleReset}> Reset </button>
-      <div className="food-list">
-        {data.map((item) => (
-          <FoodCard
-            key={item.name} 
-            item={item}
-            onIncrement={() => handleIncrement(item)}
-            onDecrement={() => handleDecrement(item)}
-            Deletitem={() => deleteItemFromScreen(item)}
-          />
-        ))}
-      </div>
+      <CustomNavBar />
+      <button onClick={handleReset}> Reset </button>
+<div className="food-list">
+  {data.length === 0 ? (
+    <p>🚨 لا توجد عناصر، من فضلك ضيف بيانات.</p>
+  ) : (
+    data.map((item) => (
+      <FoodCard
+        key={item.name}
+        item={item}
+        onIncrement={() => handleIncrement(item)}
+        onDecrement={() => handleDecrement(item)}
+        onDelete={() => deleteItemFromScreen(item)}
+      />
+    ))
+  )}
+</div>
+
     </div>
   );
 }
