@@ -13,7 +13,7 @@ function CustomNavBar({ item, onIncrement, onDecrement }) {
     </div>
   </div>
   <div className="navbar-center">
-    <a className="btn btn-ghost text-xl">Ordar Al team</a>
+    <a className="btn btn-ghost text-xl">جمع اوردر الشلة</a>
   </div>
   <div className="navbar-end">
     <button className="btn btn-ghost btn-circle">

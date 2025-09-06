@@ -17,13 +17,11 @@ const FakeData = [
 function App() {
   const [data, setData] = useState(FakeData);
 
-  // reset
   const handleReset = () => {
     const newData = data.map((el) => ({ ...el, amount: 0 }));
     setData(newData);
   };
 
-  // increment
   const handleIncrement = (item) => {
     const newData = data.map((el) => {
       if (el.name === item.name) {
@@ -34,7 +32,6 @@ function App() {
     setData(newData);
   };
 
-  // decrement
   const handleDecrement = (item) => {
     const newData = data.map((el) => 
       el.name === item.name 
@@ -45,7 +42,6 @@ function App() {
     setData(newData);
   };
 
-  // delete
   const deleteItemFromScreen = (item) => {
     const newData = data.filter((el) => el.name !== item.name);
     setData(newData);
@@ -61,7 +57,7 @@ function App() {
 
       <div className="food-list">
         {data.length === 0 ? (
-          <p className="EmptyMessage"> لا توجد </p>
+          <p className="EmptyMessage">مفيش اكل جرب تاني  </p>
         ) : (
           data.map((item) => (
             <FoodCard

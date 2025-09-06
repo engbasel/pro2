@@ -80,7 +80,6 @@
 .delete:hover {
   background: #c0392b;
 }
-/* خلفية عامة */
 .app-container {
   font-family: "Cairo", sans-serif;
   background: #f8f9fa;
@@ -88,7 +87,6 @@
   padding: 20px;
 }
 
-/* زرار الريسيت */
 .actions {
   text-align: center;
   margin: 20px 0;
@@ -109,7 +107,6 @@
   background: #0056b3;
 }
 
-/* جريد للكروت */
 .food-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -125,4 +122,4 @@
   font-weight: bold;
 }
 .app-container{  
-    padding: 20px;}
+    padding: 0px;}
