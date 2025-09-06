@@ -5,6 +5,7 @@ import FoodCard from "./components/food_card";
 import CustomNavBar from "./components/nav_bar";
 import "./App.css";
 import { Route, Routes } from "react-router";
+import AboutMe from "../src/pages/aboutme_view";
 
 // testing data 
 const FakeData = [
@@ -56,7 +57,8 @@ function App() {
         <button className="reset-btn" onClick={handleReset}>🔄 Reset</button>
       </div>
 <Routes>
-<Route path="/baoyut" element={'bvasel'} />
+{/* <Route path="/cart" element={'cart_page'} /> */}
+<Route path="/about-me" element={<AboutMe />} />
 
 </Routes>
     
@@ -75,6 +77,8 @@ function App() {
           ))
         )}
       </div>
+
+      
        */}
     </div>
   );
