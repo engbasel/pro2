@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import FoodCard from "./components/food_card";
 import CustomNavBar from "./components/nav_bar";
 import "./App.css";
+import { Route, Routes } from "react-router";
 
 // testing data 
 const FakeData = [
@@ -54,8 +55,12 @@ function App() {
       <div className="actions">
         <button className="reset-btn" onClick={handleReset}>🔄 Reset</button>
       </div>
+<Routes>
+<Route path="/baoyut" element={'bvasel'} />
 
-      <div className="food-list">
+</Routes>
+    
+      {/* <div className="food-list">
         {data.length === 0 ? (
           <p className="EmptyMessage">مفيش اكل جرب تاني  </p>
         ) : (
@@ -70,6 +75,7 @@ function App() {
           ))
         )}
       </div>
+       */}
     </div>
   );
 }
