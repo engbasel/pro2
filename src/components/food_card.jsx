@@ -1,6 +1,6 @@
 import React from "react";
 
-function FoodCard({ item, onIncrement, onDecrement }) {
+function FoodCard({ item, onIncrement, onDecrement ,Deletitem}) {
   return (
     <div className="food-card">
       <div className="food-details">
@@ -14,6 +14,9 @@ function FoodCard({ item, onIncrement, onDecrement }) {
         <span className="total-number">{item.amount}</span>
         <button className="btn remove-btn" onClick={onDecrement}>
           ➖
+        </button>
+        <button className="btn remove-btn" onClick={Deletitem}>
+          Delete
         </button>
       </div>
     </div>

@@ -39,6 +39,14 @@ const handleDecrement = (item) => {
   );
   console.log(newData);
   setData(newData);
+  
+};
+
+
+const deleteItemFromScreen = (item) => {
+  const newData = data.filter((el) => el.name !== item.name);
+  setData(newData);
+  
 };
 
 
@@ -53,6 +61,7 @@ const handleDecrement = (item) => {
             item={item}
             onIncrement={() => handleIncrement(item)}
             onDecrement={() => handleDecrement(item)}
+            Deletitem={() => deleteItemFromScreen(item)}
           />
         ))}
       </div>
