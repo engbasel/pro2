@@ -10,6 +10,7 @@ import AboutCompany from "./components/AboutCompany";
 import AboutPeople from "./components/AboutPeople";
 import Contact from "./components/Contact";
 import Newww from "./components/Newww";
+import Login from "./pages/login";
 
 // testing data 
 const FakeData = [
@@ -55,11 +56,11 @@ function App() {
 
   return (
     <div className="app-container">
-      <CustomNavBar />
-      
+      {/* <CustomNavBar /> */}
+{/*       
       <div className="actions">
         <button className="reset-btn" onClick={handleReset}>🔄 Reset</button>
-      </div>
+      </div> */}
 
     <Routes>
       {/* route عادي */}
@@ -73,7 +74,7 @@ function App() {
 
       <Route path="/contact" element={<Contact />} />
     </Routes>
-
+<Login></Login>
 
       {/* <div className="food-list">
         {data.length === 0 ? (
